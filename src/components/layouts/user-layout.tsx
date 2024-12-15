@@ -2,8 +2,10 @@ import { Outlet } from "react-router-dom"
 import Header from "../ui/header/header"
 import UserPageText from "../ui/user-page-text"
 import UserPageRedirect from "../ui/user-page-redirect"
+import { useMiddleware } from "../../hook/use-middleware"
 
 const UserLayout = () => {
+    useMiddleware()
     return (
         <>
             <Header />

@@ -1,8 +1,9 @@
 import { FormikHelpers } from 'formik';
 import useFormLoading from './use-form-loading';
-import {  registerInitialValues } from '../static/form-initial-values';
+import { registerInitialValues } from '../static/form-initial-values';
 import { useNavigate } from 'react-router-dom';
 import { makeNotification } from '../utils/make-notification';
+import { register } from '../api/user/register';
 
 const useRegisterSubmit = () => {
     const navigate = useNavigate()
@@ -14,13 +15,17 @@ const useRegisterSubmit = () => {
     ) => {
         handleLoading(true);
         setSubmitting(true);
-        setTimeout(() => {
-            setSubmitting(false);
-            handleLoading(false);
-            console.log('Form submitted with values:', values);
-            makeNotification("success", "Registration success!")
-            navigate('/user/login');
-        }, 3000);
+        const { fname, lname, email, password } = values
+        await register({ fname, lname, email, password })
+            .then(() => {
+                makeNotification("success", "Registration success!");
+                navigate('/user/login')
+            }).catch(error => {
+                makeNotification('error', error.message)
+            }).finally(() => {
+                handleLoading(false);
+                setSubmitting(false);
+            })
     };
 
     return handleRegisterSubmit

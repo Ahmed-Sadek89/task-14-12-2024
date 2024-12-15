@@ -1,6 +1,8 @@
 import Swal from 'sweetalert2'
+import Cookies from 'universal-cookie';
 
 const useHandleLogout = () => {
+    const cookie = new Cookies()
     const handleLogout = () => {
         Swal.fire({
             title: 'Are you sure?',
@@ -10,6 +12,7 @@ const useHandleLogout = () => {
             cancelButtonText: 'Cancel'
         }).then((result) => {
             if (result.isConfirmed) {
+                cookie.remove('test-auth')
                 window.location.href = '/user/login';
             }
         });
