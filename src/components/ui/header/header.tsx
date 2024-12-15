@@ -1,4 +1,4 @@
-import Logo from '../../../assets/vite.svg'
+import Logo from '../../../utils/get-main-logo'
 import PageHeaderLogout from './page-header-logout'
 import UserHeaderLink from './user-header-link'
 
