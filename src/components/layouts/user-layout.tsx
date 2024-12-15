@@ -1,11 +1,12 @@
 import { Outlet } from "react-router-dom"
+import Header from "../ui/header/header"
 
 const UserLayout = () => {
     return (
-        <div>
-            UserLayout
+        <>
+            <Header />
             <Outlet />
-        </div>
+        </>
     )
 }
 
