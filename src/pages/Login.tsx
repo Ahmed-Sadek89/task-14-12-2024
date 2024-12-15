@@ -3,7 +3,7 @@ import { loginValidationSchema } from '../static/form-validation-schema';
 import { loginInitialValues } from '../static/form-initial-values';
 import BaseInput from '../components/ui/base-input';
 import BaseBtnSubmit from '../components/ui/base-btn-submit';
-import useFormLoading from '../hook/use-form-loading';
+import useFormLoading from '../hook/use-loading';
 import useLoginSubmit from '../hook/use-login-submit';
 
 const Login = () => {

@@ -1,8 +1,10 @@
+import { useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import Cookies from 'universal-cookie';
 
 const useHandleLogout = () => {
     const cookie = new Cookies()
+    const navigate = useNavigate();
     const handleLogout = () => {
         Swal.fire({
             title: 'Are you sure?',
@@ -13,9 +15,9 @@ const useHandleLogout = () => {
         }).then((result) => {
             if (result.isConfirmed) {
                 cookie.remove('test-auth')
-                window.location.href = '/user/login';
+                cookie.remove('test-user')
             }
-        });
+        }).then(() => navigate('/user/login'))
     }
 
     return handleLogout

@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const useFormLoading = () => {
+const useLoading = () => {
     const [isLoading, setIsLoading] = useState(false);
     const handleLoading = (loading: boolean) => setIsLoading(loading);
 
@@ -10,4 +10,4 @@ const useFormLoading = () => {
     }
 }
 
-export default useFormLoading
+export default useLoading

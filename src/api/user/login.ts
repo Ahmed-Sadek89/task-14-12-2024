@@ -6,7 +6,7 @@ export const login = async (user: ExistedUser) => {
     try {
         const existingUser: User | undefined = await getUserByEmail(user.email);
         if (existingUser && existingUser.password === user.password) {
-            return true;
+            return existingUser;
         }
 
         throw new Error("Invalid email or password");

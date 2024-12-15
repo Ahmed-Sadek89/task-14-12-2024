@@ -1,5 +1,5 @@
 import { FormikHelpers } from 'formik';
-import useFormLoading from './use-form-loading';
+import useFormLoading from './use-loading';
 import { loginInitialValues } from '../static/form-initial-values';
 import { useNavigate } from 'react-router-dom';
 import { makeNotification } from '../utils/make-notification';
@@ -19,9 +19,10 @@ const useLoginSubmit = () => {
         handleLoading(true);
         setSubmitting(true);
         await login(values)
-            .then(() => {
+            .then((res) => {
                 makeNotification("success", "Login success!");
                 cookie.set("test-auth", `Bearer ${token}`)
+                cookie.set("test-user", res?.fname+" "+ res?.lname)
             })
             .then(() => {
                 if (cookie.get("test-auth")) {

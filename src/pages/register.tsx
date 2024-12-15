@@ -3,7 +3,7 @@ import { registerValidationSchema } from '../static/form-validation-schema';
 import { registerInitialValues } from '../static/form-initial-values';
 import BaseInput from '../components/ui/base-input';
 import BaseBtnSubmit from '../components/ui/base-btn-submit';
-import useFormLoading from '../hook/use-form-loading';
+import useFormLoading from '../hook/use-loading';
 import useRegisterSubmit from '../hook/use-register-submit';
 
 const Register = () => {

@@ -27,6 +27,20 @@
       "lname": "Sadek",
       "email": "am0871780@gmail.com",
       "password": "Ahmed@012"
+    },
+    {
+      "id": "1b82",
+      "fname": "Amr",
+      "lname": "Sadek",
+      "email": "amr@yahoo.com",
+      "password": "Amr@01212"
+    },
+    {
+      "id": "6b7f",
+      "fname": "mohamed",
+      "lname": "hany",
+      "email": "mohany@test.com",
+      "password": "Ahmed@01212"
     }
   ],
   "products": [
@@ -34,7 +48,7 @@
       "id": 1,
       "name": "Apple iMac 27\", 1TB HDD, Retina 5K Display, M3 Max",
       "imageDark": "https://flowbite.s3.amazonaws.com/blocks/e-commerce/imac-front-dark.svg",
-      "rating": 5.0,
+      "rating": 5,
       "reviews": 455,
       "price": "$1,699"
     },
